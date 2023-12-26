@@ -1,0 +1,4 @@
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.AssemblyInfo.cs
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.csproj.CoreCompileInputs.cache
