@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\bin\Debug\net6.0\CompanyApp.DataContext.deps.json
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\bin\Debug\net6.0\CompanyApp.DataContext.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\bin\Debug\net6.0\CompanyApp.DataContext.pdb
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\bin\Debug\net6.0\CompanyApp.Domain.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\bin\Debug\net6.0\CompanyApp.Domain.pdb
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\CompanyApp.DataContext.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\CompanyApp.DataContext.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\CompanyApp.DataContext.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\CompanyApp.DataContext.AssemblyInfo.cs
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\CompanyApp.DataContext.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\CompanyApp.DataContext.csproj.CopyComplete
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\CompanyApp.DataContext.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\refint\CompanyApp.DataContext.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\CompanyApp.DataContext.pdb
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\ref\CompanyApp.DataContext.dll

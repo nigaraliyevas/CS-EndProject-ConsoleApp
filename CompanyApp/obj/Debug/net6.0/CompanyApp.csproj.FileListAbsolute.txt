@@ -2,3 +2,13 @@ C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleAp
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.AssemblyInfo.cs
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\bin\Debug\net6.0\CompanyApp.exe
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\bin\Debug\net6.0\CompanyApp.deps.json
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\bin\Debug\net6.0\CompanyApp.runtimeconfig.json
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\bin\Debug\net6.0\CompanyApp.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\bin\Debug\net6.0\CompanyApp.pdb
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\refint\CompanyApp.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.pdb
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.genruntimeconfig.cache
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\ref\CompanyApp.dll
