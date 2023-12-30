@@ -7,7 +7,7 @@ namespace CompanyApp.DataContext.Interfaces
         bool Create(T entity);
         bool Update(T entity);
         bool Delete(T entity);
-        T Get (T entity);
-        List<T> GetAll(Predicate<T> entity = null);
+        T Get (Predicate<T> filter);
+        List<T> GetAll(Predicate<T> filter = null);
     }
 }
