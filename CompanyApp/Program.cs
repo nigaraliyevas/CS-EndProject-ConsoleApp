@@ -1,7 +1,7 @@
 ﻿using CompanyApp.Helper;
 Helpers.ChangeTextColorAndAlignCenter(ConsoleColor.Green, "~~WELCOME TO COMPANY APP~~");
 Helpers.ChangeTextColorAndAlignCenter(ConsoleColor.Yellow, "-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_-_-_-\n");
-/*#region loading-bar
+#region loading-bar
 Console.Write("                                               Loading");
 Helpers.WriteProgressBar(0);
 for (var i = 0; i <= 100; ++i)
@@ -12,7 +12,8 @@ for (var i = 0; i <= 100; ++i)
 Console.WriteLine();
 Helpers.WriteProgress(0);
 Console.WriteLine("");
-#endregion*/
+#endregion
 Helpers.ChangeTextColorAndAlignCenter(ConsoleColor.Yellow, "-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_-_-_-\n\n");
+Thread.Sleep(2500);
 Helpers.MenuBar();
 

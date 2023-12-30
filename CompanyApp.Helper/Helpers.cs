@@ -52,7 +52,7 @@ startMenu: ChangeTextColor(ConsoleColor.Yellow, "1.DepartmentMenu 2.EmployeeMenu
                     switch (menuSelection)
                     {
                         case (int)Menus.DepartmentMenu:
-                            Console.WriteLine("" +
+                            ChangeTextColor(ConsoleColor.Cyan, 
                             "[1] Create Department\n" +
                             "[2] Get All Departments\n" +
                             "[3] Get All Departments By Name\n" +
@@ -96,7 +96,7 @@ startMenu: ChangeTextColor(ConsoleColor.Yellow, "1.DepartmentMenu 2.EmployeeMenu
                             }
                             break;
                         case (int)Menus.EmployeeMenu:
-                            Console.WriteLine("" +
+                            ChangeTextColor(ConsoleColor.Cyan,
                            "[1] Create Employee\n" +
                            "[2] Get All Employees\n" +
                            "[3] Get All Employees By Name Or Surname\n" +
@@ -104,12 +104,12 @@ startMenu: ChangeTextColor(ConsoleColor.Yellow, "1.DepartmentMenu 2.EmployeeMenu
                            "[5] Get Employees By Age\n" +
                            "[6] Get Employees By Department Name\n" +
                            "[7] Get Employees By Department ID\n" +
-                           "[7] Get All Employees Count\n" +
-                           "[5] Update Employee\n" +
-                           "[6] Delete Employee\n" +
+                           "[8] Get All Employees Count\n" +
+                           "[9] Update Employee\n" +
+                           "[10] Delete Employee\n" +
                            "[0] Exit EmployeeMenu\n");
                             var getMenuNumber = int.TryParse(Console.ReadLine(), out var getEmployeeMenu);
-                            if (getEmployeeMenu > 0 && getEmployeeMenu < 7)
+                            if (getEmployeeMenu > 0 && getEmployeeMenu < 11)
                             {
                                 switch (getEmployeeMenu)
                                 {
@@ -166,7 +166,7 @@ startMenu: ChangeTextColor(ConsoleColor.Yellow, "1.DepartmentMenu 2.EmployeeMenu
                 }
                 else
                 {
-                    ChangeTextColorAndAlignCenter(ConsoleColor.Red, "Please Enter Correct number");
+                    ChangeTextColor(ConsoleColor.Red, "Please Enter Correct number\n");
 
                 }
 
