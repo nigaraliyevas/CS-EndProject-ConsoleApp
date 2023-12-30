@@ -13,3 +13,4 @@ C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleAp
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\refint\CompanyApp.DataContext.dll
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\CompanyApp.DataContext.pdb
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\ref\CompanyApp.DataContext.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.DataContext\obj\Debug\net6.0\CompanyApp.DataContext.sourcelink.json

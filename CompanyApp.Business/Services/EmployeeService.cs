@@ -19,6 +19,7 @@ namespace CompanyApp.Business.Services
             var existDepartment=_departmentRepository.
                 Get(d=>d.Name.Equals(employee.Department.Name,StringComparison.OrdinalIgnoreCase));
             if (existDepartment == null) return null;
+            //if (_employeeRepository.GetAll().Count>existDepartment.Capacity) return null;
             if (_employeeRepository.GetAll().Count>existDepartment.Capacity) return null;
             employee.Id = Count;
             employee.Department= existDepartment;
@@ -40,6 +41,11 @@ namespace CompanyApp.Business.Services
             var existEmployee=_employeeRepository.Get(em=>em.Id == id);
             if (existEmployee == null) return null;
             return existEmployee;
+        }
+
+        public List<Employee> GetAllEmployees()
+        {
+            return _employeeRepository.GetAll();
         }
 
         public int GetAllEmployeesCount()

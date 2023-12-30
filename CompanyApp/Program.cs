@@ -1,16 +1,18 @@
 ﻿using CompanyApp.Helper;
-
-Console.WriteLine("gh");
-/*int res = 0;
-for (int i = 0; i <= 100; i++)
+Helpers.ChangeTextColorAndAlignCenter(ConsoleColor.Green, "~~WELCOME TO COMPANY APP~~");
+Helpers.ChangeTextColorAndAlignCenter(ConsoleColor.Yellow, "-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_-_-_-\n");
+/*#region loading-bar
+Console.Write("                                               Loading");
+Helpers.WriteProgressBar(0);
+for (var i = 0; i <= 100; ++i)
 {
-    System.Threading.Thread.Sleep(100);
-    Console.WriteLine($"Loading:{i+1}");
-}*/
-ConsoleSpinner spinner = new ConsoleSpinner();
-spinner.Delay = 300;
-while (true)
-{
-    spinner.Turn(displayMsg: "Working ", sequenceCode: 5);
+    Helpers.WriteProgressBar(i, true);
+    System.Threading.Thread.Sleep(50);
 }
+Console.WriteLine();
+Helpers.WriteProgress(0);
+Console.WriteLine("");
+#endregion*/
+Helpers.ChangeTextColorAndAlignCenter(ConsoleColor.Yellow, "-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_-_-_-\n\n");
+Helpers.MenuBar();
 

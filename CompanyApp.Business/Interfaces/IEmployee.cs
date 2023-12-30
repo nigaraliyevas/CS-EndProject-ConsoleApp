@@ -10,6 +10,7 @@ namespace CompanyApp.Business.Interfaces
         List<Employee> GetEmployeesByAge(int age);
         List<Employee> GetEmployeesByDepartmentID(int departmentID);
         List<Employee> GetEmployeesByDepartmentName(string departmentName);
+        List<Employee> GetAllEmployees();
         List<Employee> GetEmployeesByNameOrSurname(string name = null, string surname = null);
         int GetAllEmployeesCount();
         Employee Update(Employee employee,int id,string departmentName);

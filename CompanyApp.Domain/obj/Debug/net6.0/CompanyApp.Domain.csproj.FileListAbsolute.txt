@@ -9,3 +9,4 @@ C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleAp
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Domain\obj\Debug\net6.0\refint\CompanyApp.Domain.dll
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Domain\obj\Debug\net6.0\CompanyApp.Domain.pdb
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Domain\obj\Debug\net6.0\ref\CompanyApp.Domain.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Domain\obj\Debug\net6.0\CompanyApp.Domain.sourcelink.json
