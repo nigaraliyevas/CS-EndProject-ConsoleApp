@@ -67,9 +67,9 @@ namespace CompanyApp.Business.Services
             return existDepartment;
         }
 
-        public List<Department> GetAllDepartmentsByName(string name)
+        public List<Department> GetAllDepartmentsByCapacity(int capacity)
         {
-            var existDepartment = _departmentRepository.GetAll(d => d.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            var existDepartment = _departmentRepository.GetAll(d => d.Capacity==capacity);
             if (existDepartment is null) return null;
             return existDepartment;
         }

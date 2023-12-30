@@ -7,7 +7,7 @@ namespace CompanyApp.Business.Interfaces
         Department Update(int id,Department department);
         Department Get(int id);
         List<Department> GetAllDepartments();
-        List<Department> GetAllDepartmentsByName(string name);
+        List<Department> GetAllDepartmentsByCapacity(int capacity);
         Department Delete(int id);
         Department Create(Department department);
     }

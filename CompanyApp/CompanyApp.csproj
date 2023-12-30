@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CompanyApp.Business\CompanyApp.Business.csproj" />
     <ProjectReference Include="..\CompanyApp.Helper\CompanyApp.Helper.csproj" />
   </ItemGroup>
 

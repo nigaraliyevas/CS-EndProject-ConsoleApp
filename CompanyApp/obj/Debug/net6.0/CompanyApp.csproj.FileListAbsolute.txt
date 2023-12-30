@@ -17,3 +17,9 @@ C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleAp
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.csproj.CopyComplete
 C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\obj\Debug\net6.0\CompanyApp.sourcelink.json
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\bin\Debug\net6.0\CompanyApp.Business.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\bin\Debug\net6.0\CompanyApp.DataContext.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\bin\Debug\net6.0\CompanyApp.Domain.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\bin\Debug\net6.0\CompanyApp.Business.pdb
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\bin\Debug\net6.0\CompanyApp.DataContext.pdb
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp\bin\Debug\net6.0\CompanyApp.Domain.pdb
