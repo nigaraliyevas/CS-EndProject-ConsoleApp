@@ -1,0 +1,11 @@
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Helper\bin\Debug\net6.0\CompanyApp.Helper.deps.json
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Helper\bin\Debug\net6.0\CompanyApp.Helper.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Helper\bin\Debug\net6.0\CompanyApp.Helper.pdb
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Helper\obj\Debug\net6.0\CompanyApp.Helper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Helper\obj\Debug\net6.0\CompanyApp.Helper.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Helper\obj\Debug\net6.0\CompanyApp.Helper.AssemblyInfo.cs
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Helper\obj\Debug\net6.0\CompanyApp.Helper.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Helper\obj\Debug\net6.0\CompanyApp.Helper.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Helper\obj\Debug\net6.0\refint\CompanyApp.Helper.dll
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Helper\obj\Debug\net6.0\CompanyApp.Helper.pdb
+C:\Users\User\Desktop\Code Academy\Tasks\Task-4_09.10.23\C#-EndProject-ConsoleApp\CompanyApp.Helper\obj\Debug\net6.0\ref\CompanyApp.Helper.dll

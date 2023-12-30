@@ -8,7 +8,7 @@ namespace CompanyApp.Business.Services
     {
         private readonly DepartmentRepository _departmentRepository;
         private readonly EmployeeRepository _employeeRepository;
-        private static int Count;
+        private static int Count = 1;
         public DepartmentService()
         {
             _departmentRepository = new();
@@ -16,7 +16,20 @@ namespace CompanyApp.Business.Services
         }
         public Department Create(Department department)
         {
-            throw new NotImplementedException();
+            var existDepartment = _departmentRepository.Get(d => d.Name.Equals(department.Name, StringComparison.OrdinalIgnoreCase));
+            if (existDepartment is not null) return null;
+            department.Id = Count;
+            if (!_departmentRepository.Create(department)) return null;
+            if (!string.IsNullOrEmpty(department.Name))
+            {
+                if (department.Capacity == 0) return null;
+                Count++;
+                return department;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public Department Delete(int id)
@@ -56,14 +69,31 @@ namespace CompanyApp.Business.Services
 
         public List<Department> GetAllDepartmentsByName(string name)
         {
-            var existDepartment = _departmentRepository.GetAll(d => d.Name == name);
+            var existDepartment = _departmentRepository.GetAll(d => d.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
             if (existDepartment is null) return null;
             return existDepartment;
         }
 
         public Department Update(int id, Department department)
         {
-            throw new NotImplementedException();
+            var existDepartment=_departmentRepository.Get(d=>d.Id== id);
+            if (existDepartment is null) return null;
+            var existDepartmentWithName = _departmentRepository.Get(d => d.Name.Equals(department.Name, StringComparison.OrdinalIgnoreCase) && d.Id!=id);
+            if (existDepartmentWithName is not null) return null;
+            if (!_departmentRepository.Update(department)) return null;
+            if(!string.IsNullOrEmpty(department.Name))
+            {
+                if (department.Capacity == 0) return null;
+                else
+                {
+                    existDepartment = department;
+                    return existDepartment;
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }

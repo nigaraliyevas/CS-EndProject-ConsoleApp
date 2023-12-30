@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApp.DataContext", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApp.Business", "..\CompanyApp.Business\CompanyApp.Business.csproj", "{BCDC45A3-5A50-4B7F-8834-722B6809A062}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApp.Helper", "..\CompanyApp.Helper\CompanyApp.Helper.csproj", "{4A84BB04-2F75-43A9-BB6F-A87DFE9AF8DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BCDC45A3-5A50-4B7F-8834-722B6809A062}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCDC45A3-5A50-4B7F-8834-722B6809A062}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCDC45A3-5A50-4B7F-8834-722B6809A062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A84BB04-2F75-43A9-BB6F-A87DFE9AF8DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A84BB04-2F75-43A9-BB6F-A87DFE9AF8DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A84BB04-2F75-43A9-BB6F-A87DFE9AF8DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A84BB04-2F75-43A9-BB6F-A87DFE9AF8DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

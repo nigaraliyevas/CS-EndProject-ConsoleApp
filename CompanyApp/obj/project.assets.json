@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "CompanyApp.Helper/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CompanyApp.Helper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CompanyApp.Helper.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CompanyApp.Helper/1.0.0": {
+      "type": "project",
+      "path": "../CompanyApp.Helper/CompanyApp.Helper.csproj",
+      "msbuildProject": "../CompanyApp.Helper/CompanyApp.Helper.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "CompanyApp.Helper >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\User\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\Task-4_09.10.23\\C#-EndProject-ConsoleApp\\CompanyApp.Helper\\CompanyApp.Helper.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Code Academy\\Tasks\\Task-4_09.10.23\\C#-EndProject-ConsoleApp\\CompanyApp.Helper\\CompanyApp.Helper.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

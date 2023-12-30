@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "CompanyApp/1.0.0": {
+        "dependencies": {
+          "CompanyApp.Helper": "1.0.0"
+        },
         "runtime": {
           "CompanyApp.dll": {}
+        }
+      },
+      "CompanyApp.Helper/1.0.0": {
+        "runtime": {
+          "CompanyApp.Helper.dll": {}
         }
       }
     }
   },
   "libraries": {
     "CompanyApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CompanyApp.Helper/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
