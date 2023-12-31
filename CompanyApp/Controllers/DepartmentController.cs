@@ -1,4 +1,5 @@
-﻿using CompanyApp.Business.Services;
+﻿using CompanyApp.Business.Interfaces;
+using CompanyApp.Business.Services;
 using CompanyApp.Domain.Models;
 using CompanyApp.Helper;
 
@@ -26,7 +27,7 @@ namespace CompanyApp.Controllers
                 var result = _departmentService.Create(department);
                 if (result is not null)
                 {
-                    Helpers.ChangeTextColor(ConsoleColor.Green, $"{department.Name} Department Successfully Created✔️");
+                    Helpers.ChangeTextColor(ConsoleColor.Green, $"{department.Name} Department Created");
                 }
                 else
                 {
@@ -71,6 +72,70 @@ namespace CompanyApp.Controllers
                 Helpers.ChangeTextColor(ConsoleColor.Red, "Something Went Wrong...");
             }
 
+        }
+        public void GetDepartmentById()
+        {
+            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department ID:");
+            var id = int.TryParse(Console.ReadLine(), out var departmentId);
+            if (id)
+            {
+                var departmentWithId = _departmentService.Get(departmentId);
+                Console.WriteLine($"ID : {departmentWithId.Id}, Name : {departmentWithId.Name}");
+
+            }
+            else
+            {
+                Helpers.ChangeTextColor(ConsoleColor.Red, "Something Went Wrong...");
+            }
+        }
+        public void UpdateDepartment()
+        {
+            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department ID:");
+            var id = int.TryParse(Console.ReadLine(), out var departmentId);
+            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department Name:");
+            var departmentName = Console.ReadLine();
+            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department Capacity:");
+            var capacity = int.TryParse(Console.ReadLine(), out var departmentCapacity);
+            if (id && capacity)
+            {
+                Department newDepartment = new Department();
+                newDepartment.Name = departmentName;
+                newDepartment.Capacity = departmentCapacity;
+                var result = _departmentService.Update(departmentId, newDepartment);
+                if (result is not null)
+                {
+                    Helpers.ChangeTextColor(ConsoleColor.Green, $"Name : {newDepartment.Name} Updated");
+                }
+                else
+                {
+                    Helpers.ChangeTextColor(ConsoleColor.Red, "Something Went Wrong...");
+                }
+            }
+            else
+            {
+                Helpers.ChangeTextColor(ConsoleColor.Red, "Please Enter Right Capacity...");
+            }
+        }
+        public void DeleteDepartment()
+        {
+            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department ID:");
+            var id = int.TryParse(Console.ReadLine(), out var departmentId);
+            if (id)
+            {
+                var result = _departmentService.Delete(departmentId); 
+                if (result is not null)
+                {
+                    Helpers.ChangeTextColor(ConsoleColor.Green, $"Name : {result.Name} Deleted");
+                }
+                else
+                {
+                    Helpers.ChangeTextColor(ConsoleColor.Red, "Something Went Wrong");
+                }
+            }
+            else
+            {
+                Helpers.ChangeTextColor(ConsoleColor.Red, "Please Enter Right ID...");
+            }
         }
     }
 }

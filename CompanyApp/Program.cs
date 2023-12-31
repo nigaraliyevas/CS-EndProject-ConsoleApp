@@ -21,9 +21,9 @@ Helpers.ChangeTextColorAndAlignCenter(ConsoleColor.Yellow, "-_-_-_-_-_-_-_-_-_-_
 Thread.Sleep(2500);
 while (true)
 {
-startMenu: ChangeTextColor(ConsoleColor.Yellow, "1.DepartmentMenu 2.EmployeeMenu 0.ExitMenu\n");
+startMenu: ChangeTextColor(ConsoleColor.DarkYellow, "1.DepartmentMenu 2.EmployeeMenu 0.ExitMenu\n");
     Thread.Sleep(100);
-    ChangeTextColor(ConsoleColor.DarkYellow, "Enter A Number For Menu:\n");
+    ChangeTextColor(ConsoleColor.Yellow, "Enter A Number For Menu:\n");
     var menuBar = int.TryParse(Console.ReadLine(), out var menuSelection);
     if (menuBar && menuSelection > 0 && menuSelection < 3)
     {
@@ -53,13 +53,13 @@ startMenu: ChangeTextColor(ConsoleColor.Yellow, "1.DepartmentMenu 2.EmployeeMenu
                             departmentController.GetAllDepartmentsByCapacity();
                             break;
                         case (int)DepartmentMenu.GetDepartmentById:
-                            //
+                            departmentController.GetDepartmentById();
                             break;
                         case (int)DepartmentMenu.UpdateDepartment:
-                            //
+                            departmentController.UpdateDepartment();
                             break;
                         case (int)DepartmentMenu.DeleteDepartment:
-                            //
+                            departmentController.DeleteDepartment();
                             break;
                             break;
                     }

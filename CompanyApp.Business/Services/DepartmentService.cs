@@ -78,7 +78,7 @@ namespace CompanyApp.Business.Services
         {
             var existDepartment=_departmentRepository.Get(d=>d.Id== id);
             if (existDepartment is null) return null;
-            var existDepartmentWithName = _departmentRepository.Get(d => d.Name.Equals(department.Name, StringComparison.OrdinalIgnoreCase) && d.Id!=id);
+            var existDepartmentWithName = _departmentRepository.Get(d => d.Name.Equals(department.Name, StringComparison.OrdinalIgnoreCase) && d.Id!=department.Id);
             if (existDepartmentWithName is not null) return null;
             if (!_departmentRepository.Update(department)) return null;
             if(!string.IsNullOrEmpty(department.Name))
@@ -86,7 +86,16 @@ namespace CompanyApp.Business.Services
                 if (department.Capacity == 0) return null;
                 else
                 {
-                    existDepartment = department;
+                    if (existDepartment.Capacity > department.Capacity)
+                    {
+                        var res = _employeeRepository.GetAll(em => em.Department.Name.ToLower() == department.Name.ToLower());
+                        for (int i = res.Count; i <=department.Capacity ; i--)
+                        {
+                            _employeeRepository.Delete(res[i]);
+                        }
+                    }
+                    existDepartment.Name = department.Name;
+                    existDepartment.Capacity = department.Capacity;
                     return existDepartment;
                 }
             }
