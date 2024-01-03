@@ -1,5 +1,4 @@
-﻿using CompanyApp.Business.Interfaces;
-using CompanyApp.Business.Services;
+﻿using CompanyApp.Business.Services;
 using CompanyApp.Domain.Models;
 using CompanyApp.Helper;
 
@@ -80,8 +79,14 @@ namespace CompanyApp.Controllers
             if (id)
             {
                 var departmentWithId = _departmentService.Get(departmentId);
-                Console.WriteLine($"ID : {departmentWithId.Id}, Name : {departmentWithId.Name}");
-
+                if (departmentWithId != null)
+                {
+                    Console.WriteLine($"ID : {departmentWithId.Id}, Name : {departmentWithId.Name}");
+                }
+                else
+                {
+                    Helpers.ChangeTextColor(ConsoleColor.Red, "Not Found 404...");
+                }
             }
             else
             {
@@ -91,12 +96,18 @@ namespace CompanyApp.Controllers
         public void GetDepartmentByName()
         {
             Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department Name:");
-            var departmentName=Console.ReadLine();
+            var departmentName = Console.ReadLine();
             if (departmentName is not null)
             {
                 var departmentWithName = _departmentService.Get(departmentName);
-                Console.WriteLine($"ID : {departmentWithName.Id}, Name : {departmentWithName.Name}");
-
+                if (departmentWithName != null)
+                {
+                    Console.WriteLine($"ID : {departmentWithName.Id}, Name : {departmentWithName.Name}");
+                }
+                else
+                {
+                    Helpers.ChangeTextColor(ConsoleColor.Red, "Not Found...");
+                }
             }
             else
             {
@@ -123,12 +134,12 @@ namespace CompanyApp.Controllers
                 }
                 else
                 {
-                    Helpers.ChangeTextColor(ConsoleColor.Red, "Something Went Wrong...");
+                    Helpers.ChangeTextColor(ConsoleColor.Red, "Not Found...");
                 }
             }
             else
             {
-                Helpers.ChangeTextColor(ConsoleColor.Red, "Please Enter Right Capacity...");
+                Helpers.ChangeTextColor(ConsoleColor.Red, "Please Enter Right...");
             }
         }
         public void DeleteDepartment()
@@ -137,14 +148,14 @@ namespace CompanyApp.Controllers
             var id = int.TryParse(Console.ReadLine(), out var departmentId);
             if (id)
             {
-                var result = _departmentService.Delete(departmentId); 
+                var result = _departmentService.Delete(departmentId);
                 if (result is not null)
                 {
                     Helpers.ChangeTextColor(ConsoleColor.Green, $"Name : {result.Name} Deleted");
                 }
                 else
                 {
-                    Helpers.ChangeTextColor(ConsoleColor.Red, "Something Went Wrong");
+                    Helpers.ChangeTextColor(ConsoleColor.Red, "Not Found...");
                 }
             }
             else

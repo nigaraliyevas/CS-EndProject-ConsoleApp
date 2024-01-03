@@ -14,7 +14,7 @@ namespace CompanyApp.Business.Interfaces
         List<Employee> GetEmployeesByNameOrSurname(string nameOrSurname);
         int GetAllEmployeesCount();
         Employee Update(Employee employee,int id,string departmentName);
-        List<Employee> DeleteAllEmployeesByDepartmentName(Department departmentName);
+        List<Employee> DeleteAllEmployeesByDepartmentName(string departmentName);
 
     }
 }

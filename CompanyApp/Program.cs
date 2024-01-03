@@ -80,7 +80,7 @@ startMenu: ChangeTextColor(ConsoleColor.DarkYellow, "1.DepartmentMenu 2.Employee
                 goto MenuDepartment;
                 break;
             case (int)Menus.EmployeeMenu:
-                ChangeTextColor(ConsoleColor.Cyan,
+                MenuEmployee: ChangeTextColor(ConsoleColor.Cyan,
                $"[{count += 1}] Create Employee\n" +
                $"[{count += 1}] Get All Employees\n" +
                $"[{count += 1}] Get All Employees By Name Or Surname\n" +
@@ -142,6 +142,7 @@ startMenu: ChangeTextColor(ConsoleColor.DarkYellow, "1.DepartmentMenu 2.Employee
                 {
                     ChangeTextColor(ConsoleColor.Red, "Please Enter Correct Number...");
                 }
+                goto MenuEmployee;
                 break;
             default:
                 break;
