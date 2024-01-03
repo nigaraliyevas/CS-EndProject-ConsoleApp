@@ -19,6 +19,7 @@ Console.WriteLine("");
 #endregion
 Helpers.ChangeTextColorAndAlignCenter(ConsoleColor.Yellow, "-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_-_-_-\n\n");
 Thread.Sleep(2500);
+int count = 0;
 while (true)
 {
 startMenu: ChangeTextColor(ConsoleColor.DarkYellow, "1.DepartmentMenu 2.EmployeeMenu 0.ExitMenu\n");
@@ -31,15 +32,16 @@ startMenu: ChangeTextColor(ConsoleColor.DarkYellow, "1.DepartmentMenu 2.Employee
         {
             case (int)Menus.DepartmentMenu:
                 MenuDepartment: ChangeTextColor(ConsoleColor.Cyan,
-                "[1] Create Department\n" +
-                "[2] Get All Departments\n" +
-                "[3] Get All Departments By Capacity\n" +
-                "[4] Get Department By ID\n" +
-                "[5] Update Department\n" +
-                "[6] Delete Department\n" +
-                "[0] Exit Deparment Menu\n");
+                $"[{count += 1}] Create Department\n" +
+                $"[{count += 1}] Get All Departments\n" +
+                $"[{count += 1}] Get All Departments By Capacity\n" +
+                $"[{count += 1}] Get Department By ID\n" +
+                $"[{count += 1}] Get Department By Name\n" +
+                $"[{count += 1}] Update Department\n" +
+                $"[{count += 1}] Delete Department\n" +
+                $"[{count=0}] Exit Deparment Menu\n");
                 var getMenuNum = int.TryParse(Console.ReadLine(), out var getDepartmentMenu);
-                if (getDepartmentMenu > 0 && getDepartmentMenu < 7)
+                if (getDepartmentMenu > 0 && getDepartmentMenu < 8)
                 {
                     switch (getDepartmentMenu)
                     {
@@ -54,6 +56,9 @@ startMenu: ChangeTextColor(ConsoleColor.DarkYellow, "1.DepartmentMenu 2.Employee
                             break;
                         case (int)DepartmentMenu.GetDepartmentById:
                             departmentController.GetDepartmentById();
+                            break;
+                        case (int)DepartmentMenu.GetDepartmentByName:
+                            departmentController.GetDepartmentByName();
                             break;
                         case (int)DepartmentMenu.UpdateDepartment:
                             departmentController.UpdateDepartment();
@@ -76,51 +81,55 @@ startMenu: ChangeTextColor(ConsoleColor.DarkYellow, "1.DepartmentMenu 2.Employee
                 break;
             case (int)Menus.EmployeeMenu:
                 ChangeTextColor(ConsoleColor.Cyan,
-               "[1] Create Employee\n" +
-               "[2] Get All Employees\n" +
-               "[3] Get All Employees By Name Or Surname\n" +
-               "[4] Get Employee By ID\n" +
-               "[5] Get Employees By Age\n" +
-               "[6] Get Employees By Department Name\n" +
-               "[7] Get Employees By Department ID\n" +
-               "[8] Get All Employees Count\n" +
-               "[9] Update Employee\n" +
-               "[10] Delete Employee\n" +
-               "[0] Exit EmployeeMenu\n");
+               $"[{count += 1}] Create Employee\n" +
+               $"[{count += 1}] Get All Employees\n" +
+               $"[{count += 1}] Get All Employees By Name Or Surname\n" +
+               $"[{count += 1}] Get Employee By ID\n" +
+               $"[{count += 1}] Get Employees By Age\n" +
+               $"[{count += 1}] Get Employees By Department Name\n" +
+               $"[{count += 1}] Get Employees By Department ID\n" +
+               $"[{count += 1}] Get All Employees Count\n" +
+               $"[{count += 1}] Update Employee\n" +
+               $"[{count += 1}] Delete Employee\n" +
+               $"[{count += 1}] Delete All Employees By Deparment Name\n" +
+               $"[{count=0}] Exit EmployeeMenu\n");
                 var getMenuNumber = int.TryParse(Console.ReadLine(), out var getEmployeeMenu);
-                if (getEmployeeMenu > 0 && getEmployeeMenu < 11)
+                if (getEmployeeMenu > 0 && getEmployeeMenu < 12)
                 {
                     switch (getEmployeeMenu)
                     {
                         case (int)EmployeeMenu.CreateEmployee:
-                            //
+                            employeeController.CreateEmployee();
                             break;
                         case (int)EmployeeMenu.GetAllEmployees:
-                            //
+                            employeeController.GetAllEmployees();
                             break;
                         case (int)EmployeeMenu.GetAllEmployeesByNameOrSurname:
-                            //
+                            employeeController.GetAllEmployeesByNameOrSurname();
                             break;
                         case (int)EmployeeMenu.GetEmployeeById:
-                            //
+                            employeeController.GetEmployeeById();
                             break;
                         case (int)EmployeeMenu.GetEmployeeByAge:
-                            //
+                            employeeController.GetEmployeesByAge();
                             break;
                         case (int)EmployeeMenu.GetEmployeesByDepartmentName:
-                            //
+                            employeeController.DeleteAllEmployeesByDeparmentName();
                             break;
                         case (int)EmployeeMenu.GetEmployeesByDepartmentId:
-                            //
+                            employeeController.GetEmployeesByDepartmentId();
                             break;
                         case (int)EmployeeMenu.GetAllEmployeesCount:
-                            //
+                            employeeController.GetAllEmployeesCount();
                             break;
                         case (int)EmployeeMenu.UpdateEmployee:
-                            //
+                            employeeController.UpdateEmployee();
                             break;
                         case (int)EmployeeMenu.DeleteEmployee:
-                            //
+                            employeeController.DeleteEmployee();
+                            break;
+                        case (int)EmployeeMenu.DeleteAllEmployeesByDeparmentName:
+                            employeeController.DeleteAllEmployeesByDeparmentName();
                             break;
                             break;
                     }

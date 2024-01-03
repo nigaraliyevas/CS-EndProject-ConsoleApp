@@ -51,6 +51,7 @@
             GetAllDepartments,
             GetAllDepartmentsByCapacity,
             GetDepartmentById,
+            GetDepartmentByName,
             UpdateDepartment,
             DeleteDepartment
 
@@ -66,7 +67,8 @@
             GetEmployeesByDepartmentId,
             GetAllEmployeesCount,
             UpdateEmployee,
-            DeleteEmployee
+            DeleteEmployee,
+            DeleteAllEmployeesByDeparmentName
         }
     }
 

@@ -8,7 +8,7 @@ namespace CompanyApp.Controllers
 
     public class DepartmentController
     {
-        public readonly DepartmentService _departmentService;
+        private readonly DepartmentService _departmentService;
         public DepartmentController()
         {
             _departmentService = new DepartmentService();
@@ -52,7 +52,7 @@ namespace CompanyApp.Controllers
             }
             else
             {
-                Helpers.ChangeTextColor(ConsoleColor.Red, "Something Went Wrong...");
+                Helpers.ChangeTextColor(ConsoleColor.Red, "Empty List...");
             }
         }
         public void GetAllDepartmentsByCapacity()
@@ -81,6 +81,21 @@ namespace CompanyApp.Controllers
             {
                 var departmentWithId = _departmentService.Get(departmentId);
                 Console.WriteLine($"ID : {departmentWithId.Id}, Name : {departmentWithId.Name}");
+
+            }
+            else
+            {
+                Helpers.ChangeTextColor(ConsoleColor.Red, "Something Went Wrong...");
+            }
+        }
+        public void GetDepartmentByName()
+        {
+            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department Name:");
+            var departmentName=Console.ReadLine();
+            if (departmentName is not null)
+            {
+                var departmentWithName = _departmentService.Get(departmentName);
+                Console.WriteLine($"ID : {departmentWithName.Id}, Name : {departmentWithName.Name}");
 
             }
             else

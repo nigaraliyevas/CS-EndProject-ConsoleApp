@@ -11,18 +11,19 @@ namespace CompanyApp.Business.Services
         private DepartmentRepository _departmentRepository;
         public EmployeeService()
         {
-            _employeeRepository = new EmployeeRepository();
-
+            _employeeRepository = new();
+            _departmentRepository = new();
         }
-        public Employee Create(Employee employee)
+        public Employee Create(Employee employee, string departmentName)
         {
-            var existDepartment=_departmentRepository.
-                Get(d=>d.Name.Equals(employee.Department.Name,StringComparison.OrdinalIgnoreCase));
+            var existDepartment = _departmentRepository.
+                Get(d => d.Name.Equals(departmentName, StringComparison.OrdinalIgnoreCase));
             if (existDepartment == null) return null;
-            //if (_employeeRepository.GetAll().Count>existDepartment.Capacity) return null;
-            if (_employeeRepository.GetAll().Count>existDepartment.Capacity) return null;
+            bool checkCapacity = existDepartment.Capacity > _employeeRepository.GetAll(em => em.Department.Name == departmentName).Count;
+            bool checkAge = employee.Age >= 18 && employee.Age < 65;
+            if (!checkCapacity || !checkAge) return null;
             employee.Id = Count;
-            employee.Department= existDepartment;
+            employee.Department = existDepartment;
             if (!_employeeRepository.Create(employee)) return null;
             Count++;
             return employee;
@@ -30,15 +31,33 @@ namespace CompanyApp.Business.Services
 
         public Employee Delete(int id)
         {
-            var existEmployee=_employeeRepository.Get(em=>em.Id==id);
+            var existEmployee = _employeeRepository.Get(em => em.Id == id);
             if (existEmployee == null) return null;
             if (!_employeeRepository.Delete(existEmployee)) return null;
             return existEmployee;
         }
 
+        public List<Employee> DeleteAllEmployeesByDepartmentName(Department departmentName)
+        {
+            var existEmployees = _employeeRepository.GetAll(em => em.Department.Name.Equals(departmentName.Name, StringComparison.OrdinalIgnoreCase));
+            if (existEmployees is null) return null;
+            if (existEmployees.Count() > 0)
+            {
+                foreach (var employee in existEmployees)
+                {
+                    _employeeRepository.Delete(employee);
+                }
+                return existEmployees;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public Employee Get(int id)
         {
-            var existEmployee=_employeeRepository.Get(em=>em.Id == id);
+            var existEmployee = _employeeRepository.Get(em => em.Id == id);
             if (existEmployee == null) return null;
             return existEmployee;
         }
@@ -55,15 +74,15 @@ namespace CompanyApp.Business.Services
 
         public List<Employee> GetEmployeesByAge(int age)
         {
-            var existEmployees= _employeeRepository.GetAll(em=>em.Age==age);
-            if (existEmployees is null) return null; 
+            var existEmployees = _employeeRepository.GetAll(em => em.Age == age);
+            if (existEmployees is null) return null;
             return existEmployees;
         }
 
         public List<Employee> GetEmployeesByDepartmentID(int departmentID)
         {
             var existDepartment = _employeeRepository.GetAll(em => em.Department.Id == departmentID);
-            if (existDepartment is null) return null; 
+            if (existDepartment is null) return null;
             return existDepartment;
 
         }
@@ -75,23 +94,18 @@ namespace CompanyApp.Business.Services
             return existDepartment;
         }
 
-        public List<Employee> GetEmployeesByNameOrSurname(string name = null, string surname = null)
+        public List<Employee> GetEmployeesByNameOrSurname(string nameOrSurname)
         {
-            var existEmployeesWithName = _employeeRepository.GetAll(em => em.Name == name);
-            var existEmployeesWithSurname = _employeeRepository.GetAll(em => em.Surname == surname);
-            if (existEmployeesWithName==null && existEmployeesWithSurname==null) return null;
-            if (existEmployeesWithName != null && existEmployeesWithSurname is null) 
-                return existEmployeesWithName;
-            if (existEmployeesWithName == null && existEmployeesWithSurname is not null)
-                return existEmployeesWithSurname;
-            return null;
+            var existEmployeesWithName = _employeeRepository.GetAll(em => em.Name == nameOrSurname || em.Surname==nameOrSurname);
+            if (existEmployeesWithName is null) return null;
+            return existEmployeesWithName;
         }
 
         public Employee Update(Employee employee, int id, string departmentName)
         {
-            var existEmployee=_employeeRepository.Get(em=>em.Id == id);
+            var existEmployee = _employeeRepository.Get(em => em.Id == id);
             if (existEmployee == null) return null;
-            var existDepartment=_departmentRepository.Get(d=>d.Name.Equals(departmentName,StringComparison.OrdinalIgnoreCase));
+            var existDepartment = _departmentRepository.Get(d => d.Name.Equals(departmentName, StringComparison.OrdinalIgnoreCase));
             if (existDepartment is null) return null;
             if (!string.IsNullOrEmpty(employee.Name))
             {
@@ -101,8 +115,8 @@ namespace CompanyApp.Business.Services
             {
                 existEmployee.Surname = employee.Surname;
             }
-            existEmployee.Department = existDepartment; 
-            if(!_employeeRepository.Update(existEmployee))return null; 
+            existEmployee.Department = existDepartment;
+            if (!_employeeRepository.Update(existEmployee)) return null;
             return existEmployee;
         }
     }
