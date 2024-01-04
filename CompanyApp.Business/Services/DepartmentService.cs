@@ -78,7 +78,7 @@ namespace CompanyApp.Business.Services
         {
             var existDepartment = _departmentRepository.Get(d => d.Id == id);
             if (existDepartment is null) return null;
-            var existDepartmentWithName = _departmentRepository.Get(d => d.Name.Equals(department.Name, StringComparison.OrdinalIgnoreCase) && d.Id != department.Id);
+            var existDepartmentWithName = _departmentRepository.Get(d => d.Name.Equals(department.Name, StringComparison.OrdinalIgnoreCase) && d.Id != id);
             if (existDepartmentWithName is not null) return null;
             var existDepartmentWithAllProp = _departmentRepository.Get(d => d.Name == department.Name && d.Capacity == department.Capacity && d.Id == department.Id);
             if (existDepartmentWithAllProp is not null) return null;

@@ -97,8 +97,10 @@ namespace CompanyApp.Business.Services
             if (existEmployee == null) return null;
             var existDepartment = _departmentRepository.Get(d => d.Name.Equals(departmentName, StringComparison.OrdinalIgnoreCase));
             if (existDepartment is null) return null;
-            bool checkDepartmentSizeAvailable=existDepartment.Capacity > _employeeRepository.GetAll(em => em.Department.Name.Equals(departmentName, StringComparison.OrdinalIgnoreCase)).Count;
-            if (!checkDepartmentSizeAvailable) return null;
+            bool checkDepartmentSizeAvailable=existDepartment.Capacity <= _employeeRepository.GetAll(em => em.Department.Name.Equals(departmentName, StringComparison.OrdinalIgnoreCase)).Count && existEmployee.Department.Name.ToLower()!=departmentName.ToLower();
+            if (checkDepartmentSizeAvailable) return null;
+            bool checkAge = employee.Age >= 18 && employee.Age < 65;
+            if (checkAge == false) return null;
             if (!string.IsNullOrEmpty(employee.Name))
             {
                 existEmployee.Name = employee.Name;

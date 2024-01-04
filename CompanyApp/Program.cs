@@ -3,6 +3,7 @@ using CompanyApp.Helper;
 using static CompanyApp.Helper.Helpers;
 DepartmentController departmentController = new();
 EmployeeController employeeController = new();
+AuthorLoginController authorLoginController = new();
 Helpers.ChangeTextColorAndAlignCenter(ConsoleColor.Green, "~~WELCOME TO COMPANY APP~~");
 Helpers.ChangeTextColorAndAlignCenter(ConsoleColor.Yellow, "-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_-_-_-\n");
 #region loading-bar
@@ -20,6 +21,7 @@ Console.WriteLine("");
 Helpers.ChangeTextColorAndAlignCenter(ConsoleColor.Yellow, "-_-_-_-_-_-_-_-_-_-_--_-_-_-_-_-_-_-_-_-_-\n\n");
 Thread.Sleep(2500);
 int count = 0;
+
 while (true)
 {
 startMenu: ChangeTextColor(ConsoleColor.DarkYellow, "1.DepartmentMenu 2.EmployeeMenu 0.ExitMenu\n");
@@ -114,7 +116,7 @@ startMenu: ChangeTextColor(ConsoleColor.DarkYellow, "1.DepartmentMenu 2.Employee
                             employeeController.GetEmployeesByAge();
                             break;
                         case (int)EmployeeMenu.GetEmployeesByDepartmentName:
-                            employeeController.DeleteAllEmployeesByDeparmentName();
+                            employeeController.GetEmployeesByDepartmentName();
                             break;
                         case (int)EmployeeMenu.GetEmployeesByDepartmentId:
                             employeeController.GetEmployeesByDepartmentId();
