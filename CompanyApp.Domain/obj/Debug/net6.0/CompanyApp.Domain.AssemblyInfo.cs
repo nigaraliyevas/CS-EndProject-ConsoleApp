@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CompanyApp.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a498d0838875907364dc0a523c665b499fde039")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a3d5c0fdc94137d83a91f9da5d39d169cb9052c")]
 [assembly: System.Reflection.AssemblyProductAttribute("CompanyApp.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CompanyApp.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

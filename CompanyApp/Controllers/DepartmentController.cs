@@ -14,10 +14,10 @@ namespace CompanyApp.Controllers
         }
         public void CreateDepartment()
         {
-            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department Name:");
+            Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department Name:");
             var departmentName = Console.ReadLine();
-            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department Capacity:");
-            var capacity = int.TryParse(Console.ReadLine(), out var departmentCapacity);
+            Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department Capacity:");
+            var capacity = byte.TryParse(Console.ReadLine(), out var departmentCapacity);
             if (capacity)
             {
                 Department department = new Department();
@@ -26,7 +26,7 @@ namespace CompanyApp.Controllers
                 var result = _departmentService.Create(department);
                 if (result is not null)
                 {
-                    Helpers.ChangeTextColor(ConsoleColor.Green, $"{department.Name} Department Created");
+                    Helpers.ChangeTextColor(ConsoleColor.DarkGreen, $"{department.Name} Department Created");
                 }
                 else
                 {
@@ -54,10 +54,48 @@ namespace CompanyApp.Controllers
                 Helpers.ChangeTextColor(ConsoleColor.Red, "Empty List...");
             }
         }
+        public void OldDatasOfUpdatedDepartments()
+        {
+            Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department Name:");
+            var departmentName = Console.ReadLine();
+            if (departmentName is not null)
+            {
+                var result = _departmentService.OldDatasOfUpdatedDepartments(departmentName);
+                if (result.Count > 0)
+                {
+                    foreach (var department in result)
+                    {
+                        Console.WriteLine($"ID : {department.Id}, Name : {department.Name}, Capacity : {department.Capacity}");
+                    }
+                }
+                else
+                {
+                    Helpers.ChangeTextColor(ConsoleColor.Red, "Empty List...");
+                }
+            }
+        }
         public void GetAllDepartmentsByCapacity()
         {
-            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department Capacity:");
-            var capacity = int.TryParse(Console.ReadLine(), out var departmentCapacity);
+            Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department Capacity:");
+            var capacity = byte.TryParse(Console.ReadLine(), out var departmentCapacity);
+            var result = _departmentService.GetAllDepartmentsByCapacity(departmentCapacity);
+            if (result.Count > 0)
+            {
+                foreach (var department in result)
+                {
+                    Console.WriteLine($"Name : {department.Name}, Capacity : {department.Capacity}");
+                }
+            }
+            else
+            {
+                Helpers.ChangeTextColor(ConsoleColor.Red, "Something Went Wrong...");
+            }
+
+        }
+        public void GetAllDepartmentsWithSortedCapacity()
+        {
+            Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department Capacity:");
+            var capacity = byte.TryParse(Console.ReadLine(), out var departmentCapacity);
             var result = _departmentService.GetAllDepartmentsByCapacity(departmentCapacity);
             if (result.Count > 0)
             {
@@ -74,7 +112,7 @@ namespace CompanyApp.Controllers
         }
         public void GetDepartmentById()
         {
-            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department ID:");
+            Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department ID:");
             var id = int.TryParse(Console.ReadLine(), out var departmentId);
             if (id)
             {
@@ -95,7 +133,7 @@ namespace CompanyApp.Controllers
         }
         public void GetDepartmentByName()
         {
-            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department Name:");
+            Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department Name:");
             var departmentName = Console.ReadLine();
             if (departmentName is not null)
             {
@@ -116,51 +154,81 @@ namespace CompanyApp.Controllers
         }
         public void UpdateDepartment()
         {
-            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department ID:");
-            var id = int.TryParse(Console.ReadLine(), out var departmentId);
-            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department Name:");
-            var departmentName = Console.ReadLine();
-            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department Capacity:");
-            var capacity = int.TryParse(Console.ReadLine(), out var departmentCapacity);
-            if (id && capacity)
+            Helpers.ChangeTextColor(ConsoleColor.White, "Only Admin Can Update Department!\n\n");
+            Helpers.ChangeTextColor(ConsoleColor.White, "Please Enter Username:");
+            string username = Console.ReadLine();
+            Helpers.ChangeTextColor(ConsoleColor.White, "Please Enter Password:");
+            string password = Console.ReadLine();
+            string authorAdmin = "Admin";
+            string passwordAdmin = "Admin123";
+            if (username == authorAdmin && password == passwordAdmin)
             {
-                Department newDepartment = new Department();
-                newDepartment.Name = departmentName;
-                newDepartment.Capacity = departmentCapacity;
-                var result = _departmentService.Update(departmentId, newDepartment);
-                if (result is not null)
+                Console.WriteLine("Successfully entered as ~Admin~ \n\n");
+                Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department ID:");
+                var id = int.TryParse(Console.ReadLine(), out var departmentId);
+                Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department Name:");
+                var departmentName = Console.ReadLine();
+                Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department Capacity:");
+                var capacity = byte.TryParse(Console.ReadLine(), out var departmentCapacity);
+                if (id && capacity)
                 {
-                    Helpers.ChangeTextColor(ConsoleColor.Green, $"Name : {newDepartment.Name} Updated");
+                    Department newDepartment = new Department();
+                    newDepartment.Name = departmentName;
+                    newDepartment.Capacity = departmentCapacity;
+                    var result = _departmentService.Update(departmentId, newDepartment);
+                    if (result is not null)
+                    {
+                        Helpers.ChangeTextColor(ConsoleColor.Green, $"Name : {newDepartment.Name} Updated");
+                    }
+                    else
+                    {
+                        Helpers.ChangeTextColor(ConsoleColor.Red, "Not Found...");
+                    }
                 }
                 else
                 {
-                    Helpers.ChangeTextColor(ConsoleColor.Red, "Not Found...");
+                    Helpers.ChangeTextColor(ConsoleColor.Red, "Please Enter Right...");
                 }
             }
             else
             {
-                Helpers.ChangeTextColor(ConsoleColor.Red, "Please Enter Right...");
+                Console.WriteLine("Username Or Password Is Incorrect");
             }
         }
         public void DeleteDepartment()
         {
-            Helpers.ChangeTextColor(ConsoleColor.DarkGreen, "Enter Department ID:");
-            var id = int.TryParse(Console.ReadLine(), out var departmentId);
-            if (id)
+            Helpers.ChangeTextColor(ConsoleColor.White, "Only Admin Can Delete Department!\n\n");
+            Helpers.ChangeTextColor(ConsoleColor.White, "Please Enter Username:");
+            string username = Console.ReadLine();
+            Helpers.ChangeTextColor(ConsoleColor.White, "Please Enter Password:");
+            string password = Console.ReadLine();
+            string authorAdmin = "Admin";
+            string passwordAdmin = "Admin123";
+            if (username == authorAdmin && password == passwordAdmin)
             {
-                var result = _departmentService.Delete(departmentId);
-                if (result is not null)
+                Console.WriteLine("Successfully entered as ~Admin~ \n\n");
+                Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department ID:");
+                var id = int.TryParse(Console.ReadLine(), out var departmentId);
+                if (id)
                 {
-                    Helpers.ChangeTextColor(ConsoleColor.Green, $"Name : {result.Name} Deleted");
+                    var result = _departmentService.Delete(departmentId);
+                    if (result is not null)
+                    {
+                        Helpers.ChangeTextColor(ConsoleColor.Green, $"Name : {result.Name} Deleted");
+                    }
+                    else
+                    {
+                        Helpers.ChangeTextColor(ConsoleColor.Red, "Not Found...");
+                    }
                 }
                 else
                 {
-                    Helpers.ChangeTextColor(ConsoleColor.Red, "Not Found...");
+                    Helpers.ChangeTextColor(ConsoleColor.Red, "Please Enter Right ID...");
                 }
             }
             else
             {
-                Helpers.ChangeTextColor(ConsoleColor.Red, "Please Enter Right ID...");
+                Console.WriteLine("Username Or Password Is Incorrect");
             }
         }
     }

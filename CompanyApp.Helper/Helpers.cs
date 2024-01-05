@@ -7,6 +7,8 @@
         const string _back = "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b";
         public static void WriteProgressBar(int percent, bool update = false)
         {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+
             if (update)
                 Console.Write(_back);
             Console.Write("[");
@@ -29,6 +31,7 @@
         public static void ChangeTextColorAndAlignCenter(ConsoleColor color, string text)
         {
             Console.ForegroundColor = color;
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
             int screenWidth = Console.WindowWidth;
             int leftPadding = (screenWidth - text.Length) / 2;
             Console.WriteLine(text.PadLeft(leftPadding + text.Length));
@@ -36,9 +39,16 @@
         }
         public static void ChangeTextColor(ConsoleColor color, string text)
         {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
             Console.ForegroundColor = color;
             Console.WriteLine(text);
-            Console.ResetColor();
+
+        }
+        public static void ChangeTextColorForLoading(ConsoleColor color, string text)
+        {
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = color;
+            Console.Write(text);
         }
         public enum Menus
         {
@@ -50,9 +60,11 @@
             CreateDepartment = 1,
             GetAllDepartments,
             GetAllDepartmentsByCapacity,
+            GetAllDepartmentsWithSortedCapacity,
             GetDepartmentById,
             GetDepartmentByName,
             UpdateDepartment,
+            OldDatasOfUpdatedDepartments,
             DeleteDepartment
 
         }
@@ -60,6 +72,8 @@
         {
             CreateEmployee = 1,
             GetAllEmployees,
+            GetAllEmployeesWithSortedAge,
+            GetAllEmployeesWithSortedSalary,
             GetAllEmployeesByNameOrSurname,
             GetEmployeeById,
             GetEmployeeByAge,
@@ -67,8 +81,9 @@
             GetEmployeesByDepartmentId,
             GetAllEmployeesCount,
             UpdateEmployee,
+            OldDatasOfUpdatedEmployees,
             DeleteEmployee,
-            DeleteAllEmployeesByDeparmentName
+            DeleteAllEmployeesByDeparmentName,
         }
     }
 
