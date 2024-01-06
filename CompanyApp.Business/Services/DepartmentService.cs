@@ -8,11 +8,9 @@ namespace CompanyApp.Business.Services
     {
         private readonly DepartmentRepository _departmentRepository;
         private readonly EmployeeRepository _employeeRepository;
-        private readonly List<Department> _updatedDepartments;
         private static int Count = 1;
         public DepartmentService()
         {
-            _updatedDepartments = new();
             _departmentRepository = new();
             _employeeRepository = new();
         }
@@ -86,12 +84,6 @@ namespace CompanyApp.Business.Services
             if (existDepartmentWithAllProp is not null) return null;
             var deparmentSizeComparison = existDepartment.Capacity > department.Capacity;
             if (deparmentSizeComparison) return null;
-            Department department1 = new();
-            department1.Name = existDepartment.Name;
-            department1.Capacity = existDepartment.Capacity;
-            department1.Id = existDepartment.Id;
-            department1.CreatedDate = existDepartment.CreatedDate;
-            _updatedDepartments.Add(department1);
             if (!_departmentRepository.Update(department)) return null;
             if (!string.IsNullOrEmpty(department.Name))
             {
@@ -121,13 +113,6 @@ namespace CompanyApp.Business.Services
         public IEnumerable<Department> GetAllDepartmentsWithSortedCapacity()
         {
             return _departmentRepository.GetAll().OrderBy(d => d.Capacity);
-        }
-
-        public List<Department> OldDatasOfUpdatedDepartments(string departmentName)
-        {
-            var result = _updatedDepartments.FindAll(d => d.Name.ToLower() == departmentName.ToLower());
-            if (result is null) return null;
-            return result;
         }
     }
 }

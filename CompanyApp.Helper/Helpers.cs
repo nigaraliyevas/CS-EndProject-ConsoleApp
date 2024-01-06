@@ -64,7 +64,6 @@
             GetDepartmentById,
             GetDepartmentByName,
             UpdateDepartment,
-            OldDatasOfUpdatedDepartments,
             DeleteDepartment
 
         }

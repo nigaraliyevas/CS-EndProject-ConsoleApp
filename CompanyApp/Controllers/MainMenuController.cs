@@ -51,11 +51,10 @@ namespace CompanyApp.Controllers
                         $"[{count += 1}] Get Department By ID\n" +
                         $"[{count += 1}] Get Department By Name\n" +
                         $"[{count += 1}] Update Department\n" +
-                        $"[{count += 1}] Old Datas Of Updated Departments\n" +
                         $"[{count += 1}] Delete Department\n" +
                         $"[{count = 0}] Exit Deparment Menu\n");
                             var getMenuNum = int.TryParse(Console.ReadLine(), out var getDepartmentMenu);
-                            if (getDepartmentMenu > 0 && getDepartmentMenu < 10)
+                            if (getDepartmentMenu > 0 && getDepartmentMenu < 9)
                             {
                                 switch (getDepartmentMenu)
                                 {
@@ -76,12 +75,6 @@ namespace CompanyApp.Controllers
                                         break;
                                     case (int)DepartmentMenu.GetDepartmentByName:
                                         departmentController.GetDepartmentByName();
-                                        break;
-                                    case (int)DepartmentMenu.UpdateDepartment:
-                                        departmentController.UpdateDepartment();
-                                        break;
-                                    case (int)DepartmentMenu.OldDatasOfUpdatedDepartments:
-                                        departmentController.OldDatasOfUpdatedDepartments();
                                         break;
                                     case (int)DepartmentMenu.DeleteDepartment:
                                         departmentController.DeleteDepartment();

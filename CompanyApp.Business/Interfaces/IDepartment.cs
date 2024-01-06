@@ -5,7 +5,6 @@ namespace CompanyApp.Business.Interfaces
     public interface IDepartment
     {
         Department Update(int id,Department department);
-        List<Department> OldDatasOfUpdatedDepartments(string departmentName);
         Department Get(int id);
         Department Get(string name);
         List<Department> GetAllDepartments();
