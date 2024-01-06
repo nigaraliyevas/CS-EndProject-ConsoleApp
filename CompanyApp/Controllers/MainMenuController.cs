@@ -55,7 +55,7 @@ namespace CompanyApp.Controllers
                         $"[{count += 1}] Delete Department\n" +
                         $"[{count = 0}] Exit Deparment Menu\n");
                             var getMenuNum = int.TryParse(Console.ReadLine(), out var getDepartmentMenu);
-                            if (getDepartmentMenu > 0 && getDepartmentMenu < 9)
+                            if (getDepartmentMenu > 0 && getDepartmentMenu < 10)
                             {
                                 switch (getDepartmentMenu)
                                 {
