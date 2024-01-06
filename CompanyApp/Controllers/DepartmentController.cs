@@ -94,10 +94,8 @@ namespace CompanyApp.Controllers
         }
         public void GetAllDepartmentsWithSortedCapacity()
         {
-            Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department Capacity:");
-            var capacity = byte.TryParse(Console.ReadLine(), out var departmentCapacity);
-            var result = _departmentService.GetAllDepartmentsByCapacity(departmentCapacity);
-            if (result.Count > 0)
+            var result = _departmentService.GetAllDepartmentsWithSortedCapacity();
+            if (_departmentService.GetAllDepartments().Count> 0)
             {
                 foreach (var department in result)
                 {

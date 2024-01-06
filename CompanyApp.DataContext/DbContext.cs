@@ -1,4 +1,6 @@
 ﻿using CompanyApp.Domain.Models;
+using System.Text.Json;
+using System;
 
 namespace CompanyApp.DataContext
 {
