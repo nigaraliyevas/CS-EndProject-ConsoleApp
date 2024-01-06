@@ -76,6 +76,9 @@ namespace CompanyApp.Controllers
                                     case (int)DepartmentMenu.GetDepartmentByName:
                                         departmentController.GetDepartmentByName();
                                         break;
+                                    case (int)DepartmentMenu.UpdateDepartment:
+                                        departmentController.UpdateDepartment();
+                                        break;
                                     case (int)DepartmentMenu.DeleteDepartment:
                                         departmentController.DeleteDepartment();
                                         break;

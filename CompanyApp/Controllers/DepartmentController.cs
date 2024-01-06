@@ -54,26 +54,6 @@ namespace CompanyApp.Controllers
                 Helpers.ChangeTextColor(ConsoleColor.Red, "Empty List...");
             }
         }
-        public void OldDatasOfUpdatedDepartments()
-        {
-            Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department Name:");
-            var departmentName = Console.ReadLine();
-            if (departmentName is not null)
-            {
-                var result = _departmentService.OldDatasOfUpdatedDepartments(departmentName);
-                if (result.Count > 0)
-                {
-                    foreach (var department in result)
-                    {
-                        Console.WriteLine($"ID : {department.Id}, Name : {department.Name}, Capacity : {department.Capacity}");
-                    }
-                }
-                else
-                {
-                    Helpers.ChangeTextColor(ConsoleColor.Red, "Empty List...");
-                }
-            }
-        }
         public void GetAllDepartmentsByCapacity()
         {
             Helpers.ChangeTextColor(ConsoleColor.White, "Enter Department Capacity:");
